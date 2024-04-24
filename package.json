@@ -6,7 +6,7 @@
     "start": "NODE_ENV=\"development\" node --watch src/app.js"
   },
   "dependencies": {
-    "@hono/node-server": "^1.8.2",
-    "hono": "^4.0.10"
+    "@hono/node-server": "1.11.0",
+    "hono": "4.2.7"
   }
 }
