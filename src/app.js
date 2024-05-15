@@ -8,6 +8,7 @@ const { secureHeaders } = require("hono/secure-headers");
 const { env } = require("hono/adapter");
 const { serve } = require("@hono/node-server");
 const { serveStatic } = require("@hono/node-server/serve-static");
+const { trimTrailingSlash } = require("hono/trailing-slash");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
@@ -18,6 +19,7 @@ const app = new Hono();
 app.use(logger());
 app.use(serveStatic({ root: "./public" }));
 app.use(secureHeaders());
+app.use(trimTrailingSlash());
 
 app.route("/", indexRouter);
 app.route("/users", usersRouter);
