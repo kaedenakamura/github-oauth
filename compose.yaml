@@ -1,8 +1,7 @@
 services:
   app:
-    build: .
+    image: node:22.15.0-slim
     tty: true
-    ports:
-      - 3000:3000
     volumes:
-      - .:/github-oauth
+      - .:/app
+    working_dir: /app
